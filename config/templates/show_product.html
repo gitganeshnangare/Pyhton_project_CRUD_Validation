@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Product</title>
+</head>
+<body>
+    <h3> PRODUCT LIST</h3>
+    <a href="/">HOME</a><br><br>
+    <form action="/show/product" method="post">
+        <table border="1">
+            <thred>
+                <th> PRODUCT ID</th><br><br>
+                <th> PRODUCT NAME</th><br><br>
+                <th> PRODUCT VENDOR</th><br><br>
+                <th> PRODUCT QTY</th><br><br>
+                <th> PRODUCT PRICE</th><br><br>
+                <th>ACTION</th>
+            </thred>
+
+            <tbody>
+                {% for prod in productlist %}
+                <tr>
+                    <td>{{prod.Product_ID}}</td>
+                    <td>{{prod.Product_Name}}</td>
+                    <td>{{prod.Product_Vendor}}</td>
+                    <td>{{prod.Product_Qty}}</td>
+                    <td>{{prod.Product_Price}}</td>
+                    <td>
+                        <a href="/edit/product{{prod.Product_ID}}">EDIT</a>
+                        <a href="/delete/product{{prod.Product_ID}}">DELETE</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+    </form>
+
+
+
+</body>
+</html>
